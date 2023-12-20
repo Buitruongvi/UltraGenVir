@@ -35,15 +35,15 @@ class Tokenizer(object):
                         report.replace('"', '').replace('/', '').replace('\\', '').replace("'", '').strip().lower())
         tokens = re.split(r'\. |\s|-', report)
         tokens = [token for token in tokens if token]
-        # cleaned_report = ' . '.join(tokens) + ' .'
-        cleaned_report = ' '.join(tokens)
+        cleaned_report = ' . '.join(tokens) + ' .'
+        # cleaned_report = ' '.join(tokens)
         return cleaned_report
 
     def get_vocab_size(self):
         return len(self.token2idx)
 
-    def get_token_by_id(self, id):
-        return self.idx2token[id]
+    def get_token_by_id(self, idx):
+        return self.idx2token[idx]
 
     def get_idx_by_token(self, token):
         if token not in self.token2idx:
