@@ -1,6 +1,5 @@
 import json
 
-# Dữ liệu bạn muốn lưu vào file JSON
 data = {
     "train": [
         {
@@ -18,12 +17,9 @@ data = {
     ]
 }
 
-# Tên file JSON bạn muốn tạo
 json_file_path = "data/annotation.json"
 
-# Mở file để ghi dữ liệu
 with open(json_file_path, 'w', encoding='utf-8') as json_file:
-    # Sử dụng hàm dump để ghi dữ liệu vào file JSON
     json.dump(data, json_file, ensure_ascii=False, indent=4)
 
 print(f"File JSON đã được tạo: {json_file_path}")
